@@ -20,4 +20,6 @@ router.get('/profile',(req,res)=>{
 },userController.profileViewController)
 
 
+router.get("/login",userController.loginUserController)
+
 module.exports = router;

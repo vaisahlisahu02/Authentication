@@ -1,27 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 24px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #555;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #2575fc;
+      box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #2575fc;
+      color: white;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #1a5ddb;
+    }
+
+    @media (max-width: 480px) {
+      form {
+        padding: 30px 20px;
+      }
+    }
+</style>
+
 </head>
 <body>
-   <form action="/users/register" method="POST" >
+  <form action="/users/register" method="POST">
     <h2>Register</h2>
-    
+
     <label for="username">Username</label>
     <input type="text" name="username" required>
-    
+
     <label for="email">Email</label>
-    <input type="email"  name="email" required>
-    
+    <input type="email" name="email" required>
+
     <label for="profileImage">Profile Image</label>
-    <!-- <input type="file" id="profileImage" name="profileImage" accept="image/*" required> -->
-    <input type="text" name="profileImage">
+    <input type="text" name="profileImage" placeholder="Image URL">
+
     <label for="password">Password</label>
     <input type="password" name="password" required>
-    
+
     <button type="submit">Submit</button>
-    </form>
+  </form>
 </body>
 </html>

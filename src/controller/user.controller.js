@@ -34,3 +34,7 @@ module.exports.registerUserController = async(req,res)=>{
 module.exports.profileViewController = (req,res)=>{
     res.render("profile")
 }
+
+module.exports.loginUserController = (req,res)=>{
+    res.render("login")
+}
