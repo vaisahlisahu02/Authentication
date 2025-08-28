@@ -1,3 +1,4 @@
+const { error } = require("console");
 const express = require("express");
 const path = require("path");
 const app = express();
@@ -10,5 +11,12 @@ app.set("view engine", "ejs");
 app.get("/", (req, res) => {
   res.render("index"); 
 });
+
+app.get("/login", (req,res)=>{
+  res.render("login",{error:""})
+})
+// app.post("/users/login",(req,res)=>{
+
+// })
 
 module.exports = app;
