@@ -1,11 +1,11 @@
-// const { error } = require("console");
+
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const path = require("path");
 const app = express();
 
 
-app.set("views", path.join(__dirname, "views")); // __dirname = src
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(cookieParser());
 

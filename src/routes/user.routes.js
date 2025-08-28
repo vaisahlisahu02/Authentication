@@ -19,14 +19,14 @@ router.get('/profile', (req, res, next) => {
         if(!token) return res.redirect("/users/login");
 
         const decoded = jwt.verify(token,"node-auth-secretKey");
-        req.user = decoded; // username/email agar token me ho to
+        req.user = decoded; 
         next(); 
     } catch(err){
         return res.redirect("/users/login");
     }
 }, (req, res) => {
-    const message = req.query.message; // message query string se
-    res.render("profile", { message, user: req.user }); // pass message to ejs
+    const message = req.query.message; 
+    res.render("profile", { message, user: req.user }); 
 });
 
 module.exports = router;

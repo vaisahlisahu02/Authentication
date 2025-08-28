@@ -47,7 +47,7 @@ module.exports.loginUserController = (req, res) => {
     res.render("login");
 };
 
-// controller/user.controller.js
+
 
 module.exports.loginUserPostController = async (req, res) => {
     try {

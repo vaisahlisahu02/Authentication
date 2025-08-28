@@ -4,7 +4,7 @@ const connect = require("./src/db/db");
 connect(); 
 
 app.get('/', (req, res) => {
-    res.render('index'); // index.ejs ko render kare
+    res.render('index'); 
 });
 
 app.listen(3000, () => {
