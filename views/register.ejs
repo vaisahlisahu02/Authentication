@@ -13,7 +13,7 @@
 
     body {
       height: 100vh;
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      background: linear-gradient(135deg, #d4b8f1, #2575fc);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       justify-content: center;
@@ -83,22 +83,13 @@
 
 </head>
 <body>
-  <form action="/users/register" method="POST">
-    <h2>Register</h2>
+<form action="/users/register" method="POST">
+  <input type="text" name="username" placeholder="Username" required />
+  <input type="email" name="email" placeholder="Email" required />
+  <input type="password" name="password" placeholder="Password" required />
+  <input type="text" name="profileImage" placeholder="Profile Image URL" />
+  <button type="submit">Register</button>
+</form>
 
-    <label for="username">Username</label>
-    <input type="text" name="username" required>
-
-    <label for="email">Email</label>
-    <input type="email" name="email" required>
-
-    <label for="profileImage">Profile Image</label>
-    <input type="text" name="profileImage" placeholder="Image URL">
-
-    <label for="password">Password</label>
-    <input type="password" name="password" required>
-
-    <button type="submit">Submit</button>
-  </form>
 </body>
 </html>

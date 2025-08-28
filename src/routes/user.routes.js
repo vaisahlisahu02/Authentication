@@ -1,25 +1,27 @@
-const express = require ("express")
-const router = express.Router()
-const userController = require("../controller/user.controller")
-const jwt = require("jsonwebtoken")
+const express = require("express");
+const router = express.Router();
+const userController = require("../controller/user.controller");
+const jwt = require("jsonwebtoken");
 
-/* /users/register [get]*/
-router.get("/register",userController.registerViewController)
+
+router.get("/register", userController.registerViewController);
+
 
 router.post("/register", userController.registerUserController);
 
-router.get('/profile',(req,res)=>{
+
+router.get("/login", userController.loginUserController);
+
+
+router.get('/profile', (req,res,next) => {  
     try{
- const token = req.cookies.token
-    jwt.verify(token,"node-auth-secretKey")
-    next()
+        const token = req.cookies.token;
+        if(!token) return res.redirect("/users/login");
+        jwt.verify(token,"node-auth-secretKey");
+        next(); 
     }catch(err){
-        res.send("unauthorized")
+        res.redirect("/users/login"); 
     }
-   
-},userController.profileViewController)
-
-
-router.get("/login",userController.loginUserController)
+}, userController.profileViewController);
 
 module.exports = router;
