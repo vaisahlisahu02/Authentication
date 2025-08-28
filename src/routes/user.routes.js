@@ -20,7 +20,7 @@ router.get('/profile', (req,res,next) => {
         jwt.verify(token,"node-auth-secretKey");
         next(); 
     }catch(err){
-        res.redirect("/users/login"); 
+        res.redirect("/users/login").send({message:"registerd sucessfully"}); 
     }
 }, userController.profileViewController);
 
