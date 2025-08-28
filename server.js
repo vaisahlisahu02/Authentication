@@ -3,9 +3,9 @@ const connect = require("./src/db/db");
 
 connect(); 
 
-// app.get('/', (req, res) => {
-//     res.render('index'); // index.ejs ko render kare
-// });
+app.get('/', (req, res) => {
+    res.render('index'); // index.ejs ko render kare
+});
 
 app.listen(3000, () => {
     console.log("Server is running on port 3000");
