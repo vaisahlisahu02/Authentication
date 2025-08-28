@@ -65,8 +65,7 @@ module.exports.loginUserPostController = async (req, res) => {
 
         const token = jwt.sign({ id: user._id, email: user.email }, "node-auth-secretKey");
         res.cookie("token", token, { httpOnly: true });
-        res.redirect("/users/profile").send({message:"login successfully"})
-      
+res.redirect("/users/profile?message=Welcome "+username+"!");      
 
     } catch (err) {
         console.error(err);

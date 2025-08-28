@@ -42,5 +42,15 @@
         <p>You are successfully logged in.</p>
         <a href="/users/login">Logout</a>
     </div>
+  <div class="container">
+    <h2>Welcome to your Profile!</h2>
+        <% if(message){ %>
+      <div style="color:green; font-weight:bold;"><%= message %></div>
+    <% } %>
+    <p>You are successfully logged in.</p>
+
+    <a href="/users/logout">Logout</a>
+
+</div>
+
 </body>
-</html>

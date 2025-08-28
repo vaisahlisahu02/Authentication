@@ -13,15 +13,20 @@ router.post("/register", userController.registerUserController);
 router.get("/login", userController.loginUserController);
 router.post("/login",userController.loginUserController)
 
-router.get('/profile', (req,res,next) => {  
-    try{
+router.get('/profile', (req, res, next) => {
+    try {
         const token = req.cookies.token;
         if(!token) return res.redirect("/users/login");
-        jwt.verify(token,"node-auth-secretKey");
+
+        const decoded = jwt.verify(token,"node-auth-secretKey");
+        req.user = decoded; // username/email agar token me ho to
         next(); 
-    }catch(err){
-        res.redirect("/users/login").send({message:"registerd sucessfully"}); 
+    } catch(err){
+        return res.redirect("/users/login");
     }
-}, userController.profileViewController);
+}, (req, res) => {
+    const message = req.query.message; // message query string se
+    res.render("profile", { message, user: req.user }); // pass message to ejs
+});
 
 module.exports = router;
