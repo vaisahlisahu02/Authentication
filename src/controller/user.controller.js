@@ -46,3 +46,30 @@ module.exports.profileViewController = (req, res) => {
 module.exports.loginUserController = (req, res) => {
     res.render("login");
 };
+
+// controller/user.controller.js
+
+module.exports.loginUserPostController = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        const user = await userModel.findOne({ email });
+
+        if (!user) {
+            return res.status(400).render("login", { error: "Invalid email or password" });
+        }
+
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) {
+            return res.status(400).render("login", { error: "Invalid email or password" });
+        }
+
+        const token = jwt.sign({ id: user._id, email: user.email }, "node-auth-secretKey");
+        res.cookie("token", token, { httpOnly: true });
+        res.redirect("/users/profile");
+
+    } catch (err) {
+        console.error(err);
+        res.status(500).render("login", { error: "Something went wrong!" });
+    }
+};
+

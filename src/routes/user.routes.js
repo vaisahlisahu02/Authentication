@@ -11,7 +11,7 @@ router.post("/register", userController.registerUserController);
 
 
 router.get("/login", userController.loginUserController);
-
+router.post("/login",userController.loginUserController)
 
 router.get('/profile', (req,res,next) => {  
     try{
