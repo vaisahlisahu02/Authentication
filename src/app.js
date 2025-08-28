@@ -15,8 +15,9 @@ app.get("/", (req, res) => {
 app.get("/login", (req,res)=>{
   res.render("login",{error:""})
 })
-// app.post("/users/login",(req,res)=>{
 
-// })
+app.get("/register",(req,res)=>{
+  res.render("register",{error:""})
+})
 
 module.exports = app;
