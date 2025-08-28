@@ -3,11 +3,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+    }
+    .container {
+      text-align: center;
+      background: rgba(255,255,255,0.1);
+      padding: 50px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    a {
+      display: inline-block;
+      margin: 10px 15px;
+      padding: 12px 30px;
+      font-size: 18px;
+      color: #fff;
+      text-decoration: none;
+      background: #ff416c;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    a:hover {
+      background: #ff4b2b;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to My App</h1>
-  <a href="/login">Login</a> |
-  <a href="/register">Register</a>
+  <div class="container">
+    <h1>Welcome to My App</h1>
+    <p>Start by logging in or creating a new account</p>
+    <a href="/login">Login</a>
+    <a href="/register">Register</a>
+  </div>
 </body>
 </html>
